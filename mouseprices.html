@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheapest Mouse Prices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cheapest Mouse Prices</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Ratings</th>
+                <th>Affiliate Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add mouse details dynamically here -->
+        </tbody>
+    </table>
+
+    <script>
+        // You can use JavaScript to fetch data from Amazon and populate the table dynamically.
+        // Add your referral ID to the affiliate link.
+        document.addEventListener("DOMContentLoaded", function() {
+            // Example mouse data
+            var mouseData = [
+                { brand: "Mouse1", price: "$19.99", ratings: "4.5", affiliateLink: "https://www.amazon.com/mouse1?tag=Saidkhan42" },
+                { brand: "Mouse2", price: "$24.99", ratings: "4.2", affiliateLink: "https://www.amazon.com/mouse2?tag=Saidkhan42" },
+                // Add more mouse data as needed
+            ];
+
+            var tbody = document.querySelector("tbody");
+
+            mouseData.forEach(function(mouse) {
+                var row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${mouse.brand}</td>
+                    <td>${mouse.price}</td>
+                    <td>${mouse.ratings}</td>
+                    <td><a href="${mouse.affiliateLink}" target="_blank">Check Price</a></td>
+                `;
+                tbody.appendChild(row);
+            });
+        });
+    </script>
+
+</body>
+</html>
